@@ -1,6 +1,9 @@
 # ballmer_peak_machine
 DIY can(beer!) dispensing fridge with raspberry pi. This is my first RPI project. We use this machine in our office to dispense beer. Since we all have RFID door cards, then we use the same cards for dispensing beer from a fridge.
 
+## Video
+TODO
+
 ## Hardware and OS
  * I am using Raspberry Pi 3 Model B+, but it should work on others too(let me know!)
  * For OS I use https://blog.hypriot.com/getting-started-with-docker-on-your-arm-device/ since it has docker already installed.
