@@ -7,6 +7,13 @@ Change automaat.py GPIO pin values if you have different wiring.
 
 Demo video will be available soon.
 
+I am using RP
+
+Additional packages:
+apt-get install python-rpi.gpio python-mysqldb
+pip install mfrc522 gpiozero
+
+
 To enable systemd service use:
 cp automaat.service /etc/systemd/system/automaat.service
 systemctl enable automaat
