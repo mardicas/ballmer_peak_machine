@@ -1,10 +1,8 @@
 # ballmer_peak_machine
-RFID beer dispensing fridge with raspberry pi. This is my first RPI project. We use this machine in our office to dispense beer. Since we all have RFID door cards, then we use the same cards for dispensing beer from a fridge.
+DIY can(beer!) dispensing fridge with raspberry pi. This is my first RPI project. We use this machine in our office to dispense beer. Since we all have RFID door cards, then we use the same cards for dispensing beer from a fridge.
 The credit is added using phpmyadmin (users->credit field). When an unknown RFID card is scanned, then it gets added to users table, but "name" field has to be filled manually first time.
 
-## Configuration
- * Change password of mysql root and identity user in docker-compose.yaml (MYSQL_ROOT_PASSWORD and MYSQL_PASSWORD). Put "identity" users password into automaat.py (Line 68). Put "identity_ro" password into structure.sql (Line 20), put same password into php/index.php (Line 12).
- * Change automaat.py GPIO pin values if you have different wiring.
+
 
 ## Hardware and OS
  * I am using Raspberry Pi 3 Model B+ with wifi and bluetooth, but it should work fine on different boards too, please let me know if it works on your PI!
@@ -17,6 +15,10 @@ The credit is added using phpmyadmin (users->credit field). When an unknown RFID
 apt-get install python-rpi.gpio python-mysqldb
 pip install mfrc522 gpiozero
 ```
+
+## Configuration
+ * Change password of mysql root and identity user in docker-compose.yaml (MYSQL_ROOT_PASSWORD and MYSQL_PASSWORD). Put "identity" users password into automaat.py (Line 68). Put "identity_ro" password into structure.sql (Line 20), put same password into php/index.php (Line 12).
+ * Change automaat.py GPIO pin values if you have different wiring.
 
 ## To build frontend webpage:
 ```
