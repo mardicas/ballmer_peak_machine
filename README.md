@@ -11,6 +11,7 @@ TODO
  * Disable dtparam=spi=on from /boot/config.txt (https://pimylifeup.com/raspberry-pi-rfid-rc522/ Setting up Raspbian for the RFID RC522)
  
 ## Schematics
+You might need to put resistors on LED ground, but it depends on your LED-s. Concider 330Ω.
 ![alt text](https://github.com/mardicas/ballmer_peak_machine/blob/master/wiring_bb.png)
 ![alt text](https://github.com/mardicas/ballmer_peak_machine/blob/master/wiring_schem.png)
 
