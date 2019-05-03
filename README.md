@@ -1,8 +1,5 @@
 # ballmer_peak_machine
 DIY can(beer!) dispensing fridge with raspberry pi. This is my first RPI project. We use this machine in our office to dispense beer. Since we all have RFID door cards, then we use the same cards for dispensing beer from a fridge.
-The credit is added using phpmyadmin (users->credit field). When an unknown RFID card is scanned, then it gets added to users table, but "name" field has to be filled manually first time.
-
-
 
 ## Hardware and OS
  * I am using Raspberry Pi 3 Model B+, but it should work on others too(let me know!)
@@ -38,6 +35,10 @@ cp automaat.service /etc/systemd/system/automaat.service
 systemctl enable automaat
 systemctl start automaat
 ```
+## Managment
+* The credit is added using phpmyadmin (users->credit field). 
+* When a new RFID card is scanned, then it gets added to users table, but "name" field has to be filled manually first time and 0 credit is given.
+
 ## Debugging
 ```
 journalctl -u automaat.service
