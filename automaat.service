@@ -6,7 +6,7 @@ After=docker.service
 
 [Service]
 Type=idle
-ExecStart=/home/pirate/automaat.py
+ExecStart=/home/pirate/ballmer_peak_machine/automaat.py
 KillSignal=SIGINT
 [Install]
 WantedBy=multi-user.target
