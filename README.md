@@ -49,4 +49,4 @@ On http port (TCP 80) you should see UI with statistics, on https(443 HTTPS) por
 ## Credits, thank you, useful
 * For blinking led class(I have modified it, but this was the original I used) https://stackoverflow.com/questions/46956380/python-threading-class-for-gpio-led-blink/51888275#51888275
 * For RFID reading https://pimylifeup.com/raspberry-pi-rfid-rc522/
-* Security audit and testing help @EerikKivistik
+* Security audit and testing help https://github.com/EerikKivistik
