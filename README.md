@@ -3,7 +3,7 @@ DIY can(beer!) dispensing fridge with raspberry pi. This is my first RPI project
 
 ## Hardware and OS
  * I am using Raspberry Pi 3 Model B+, but it should work on others too(let me know!)
- * For OS I use https://blog.hypriot.com/ since it has docker already installed.
+ * For OS I use https://blog.hypriot.com/getting-started-with-docker-on-your-arm-device/ since it has docker already installed.
  * Make sure spi_bcm2835 module is loaded. (https://pimylifeup.com/raspberry-pi-rfid-rc522/ Setting up Raspbian for the RFID RC522)
  * Disable dtparam=spi=on from /boot/config.txt (https://pimylifeup.com/raspberry-pi-rfid-rc522/ Setting up Raspbian for the RFID RC522)
 
