@@ -7,7 +7,7 @@ Change automaat.py GPIO pin values if you have different wiring.
 
 Demo video will be available soon.
 
-I am using RP
+I am using Raspberry Pi 3 with wifi and bluetooth.
 
 Additional packages:
 apt-get install python-rpi.gpio python-mysqldb
@@ -27,3 +27,7 @@ docker-compose build
 
 To start phpmyadmin, mysql and frontend
 docker-compose up -d
+
+On http port you should see UI with statistics, on https port you should see phpmyadmin.
+PHPMYADMIN - https://<RPI IP>/phpmyadmin
+UI - http://<RPI IP>/
