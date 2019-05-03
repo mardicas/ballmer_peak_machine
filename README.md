@@ -14,8 +14,10 @@ pip install mfrc522 gpiozero
 ```
 
 ## Configuration
- * Change password of mysql root and identity user in docker-compose.yaml (MYSQL_ROOT_PASSWORD and MYSQL_PASSWORD). Put "identity" users password into automaat.py (Line 68). Put "identity_ro" password into structure.sql (Line 20), put same password into php/index.php (Line 12).
- * Change automaat.py GPIO pin values if you have different wiring.
+* Change password of mysql root and identity user in docker-compose.yaml (MYSQL_ROOT_PASSWORD and MYSQL_PASSWORD). 
+* Put "identity" users password into automaat.py (Line 68). 
+* Put "identity_ro" password into structure.sql (Line 20) and same password into php/index.php (Line 12).
+* Change automaat.py GPIO pin values if you have different wiring.
 
 ## To build frontend webpage:
 ```
