@@ -9,6 +9,12 @@ TODO
  * For OS I use https://blog.hypriot.com/getting-started-with-docker-on-your-arm-device/ since it has docker already installed.
  * Make sure spi_bcm2835 module is loaded. (https://pimylifeup.com/raspberry-pi-rfid-rc522/ Setting up Raspbian for the RFID RC522)
  * Disable dtparam=spi=on from /boot/config.txt (https://pimylifeup.com/raspberry-pi-rfid-rc522/ Setting up Raspbian for the RFID RC522)
+ 
+## Schematics
+![alt text](https://github.com/mardicas/ballmer_peak_machine/blob/master/wiring_bb.png)
+![alt text](https://github.com/mardicas/ballmer_peak_machine/blob/master/wiring_schem.png)
+
+You can open wiring.fzz with http://fritzing.org
 
 ## Additional packages
 ```
@@ -61,3 +67,4 @@ On http port (TCP 80) you should see UI with statistics, on https(443 HTTPS) por
 * For blinking led class(I have modified it, but this was the original I used) https://stackoverflow.com/questions/46956380/python-threading-class-for-gpio-led-blink/51888275#51888275
 * For RFID reading https://pimylifeup.com/raspberry-pi-rfid-rc522/
 * Security audit and testing help https://github.com/EerikKivistik
+* Wiring schemas http://fritzing.org/home/
