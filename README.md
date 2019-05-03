@@ -5,7 +5,7 @@ The credit is added using phpmyadmin (users->credit field). When an unknown RFID
 
 
 ## Hardware and OS
- * I am using Raspberry Pi 3 Model B+ with wifi and bluetooth, but it should work fine on different boards too, please let me know if it works on your PI!
+ * I am using Raspberry Pi 3 Model B+, but it should work on others too(let me know!)
  * For OS I use https://blog.hypriot.com/ since it has docker already installed.
  * Make sure spi_bcm2835 module is loaded. (https://pimylifeup.com/raspberry-pi-rfid-rc522/ Setting up Raspbian for the RFID RC522)
  * Disable dtparam=spi=on from /boot/config.txt (https://pimylifeup.com/raspberry-pi-rfid-rc522/ Setting up Raspbian for the RFID RC522)
