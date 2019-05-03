@@ -11,7 +11,7 @@ import traceback
 import random
 import datetime
 import MySQLdb
-
+#LED configuration GPIO pins
 leds={
     "led_right_red":13,     #33
     "led_right_green":19,   #35
@@ -20,32 +20,33 @@ leds={
     "led_up_red":5,        #29
     "led_up_green":6       #31
     }  
-
+#Front panel buttons GPIO pins
 butt={
     "button_green":16,     #36
     "button_red":20,       #38
     "button_blue":21      #40
     }
-
+#Switches that detect if there are any cans left. GPIO pins
 switch={
     "switch_red":27,       #13
     "switch_blue":22      #15
 }
-
+#Main servo for dispensing
 servo_red=23        #16
 servo_blue=24       #18
-
+#Lock/hold servo for dispensing
 servo_red_lock=4        #7
 servo_blue_lock=3       #5
 
+#RFID reader setup
 rfid_sda=8          #24  SPIO_CE0_N
 rfid_sck=11         #23 SPIO_SCLK
 rfid_mosi=10        #19 SPIO_MOSI
 rfid_miso=9         #21 SPIO_MISO
 rfid_rst=25         #22
 
+#Initialize some variables
 allowed_orders=[]
-
 blue_available=False
 red_available=False
 
@@ -57,7 +58,7 @@ luck_interval=15
 luck_chance=100
  
 last_order=datetime.datetime.now()
-#Set timeout to forget an order if no choice is made
+#Timeout in minutes, when card is scanned but no can is chosen so it goes back to RFID scanning.
 order_timeout=1
 
 while True:
@@ -185,6 +186,7 @@ cur = db.cursor()
 intervals=0
 
 while True:
+  #Occasionally make sure mysql still works.
   if intervals > 36000:
     intervals=0
     try:
@@ -241,10 +243,7 @@ while True:
         l['led_up_green'].off()
         print "Out of cans"
         time.sleep(30)
-    #if GPIO.event_detected(switch['switch_red']):
-    #    print('Red can released')
-    #if GPIO.event_detected(switch['switch_blue']):
-    #    print('Blue can released')
+    #Red button pressed
     if GPIO.event_detected(butt["button_red"]):
       if not GPIO.input(butt["button_red"]):
         print "Red is the chosen one"
@@ -269,6 +268,7 @@ while True:
         else:
             print "No cans available in red!"
         GPIO.event_detected(butt["button_red"])
+    #Blue button pressed
     if GPIO.event_detected(butt["button_blue"]):
       if not GPIO.input(butt["button_blue"]):
         print "Blue is the chosen one"
@@ -293,6 +293,7 @@ while True:
         else:
             print "No cans available in blue!"
         GPIO.event_detected(butt["button_blue"])
+    #Green button pressed
     if GPIO.event_detected(butt["button_green"]):
       if not GPIO.input(butt["button_green"]):
         print "I am green"
@@ -326,6 +327,7 @@ while True:
         else:
           print "Not possible to give out order"
         GPIO.event_detected(butt["button_green"])
+    #RFID scanning
     id, test = reader.read_no_block()
     if id != None:
         print "RFID %s"%id
