@@ -1,0 +1,12 @@
+[Unit]
+Description=automaat
+After=multi-user.target
+After=network.target
+After=docker.service
+
+[Service]
+Type=idle
+ExecStart=/home/pirate/automaat.py
+KillSignal=SIGINT
+[Install]
+WantedBy=multi-user.target

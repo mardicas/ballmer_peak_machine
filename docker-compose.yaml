@@ -1,0 +1,56 @@
+version: '3'
+services:
+  mysql:
+    image: tobi312/rpi-mysql
+    restart: always
+    read_only: true
+    volumes:
+     - ./data/mysql:/var/lib/mysql
+     - ./structure.sql:/docker-entrypoint-initdb.d/structure.sql:ro
+    tmpfs:
+      - /run/mysqld
+      - /tmp
+    environment:
+      MYSQL_ROOT_PASSWORD: ChangeMe
+      MYSQL_DATABASE: identity
+      MYSQL_USER: identity
+      MYSQL_PASSWORD: ChangeMe
+      TZ: ""
+    networks: 
+      - web
+    ports:
+      - 127.0.0.1:3306:3306
+  php:
+    image: php-web
+    build: ./php/
+    restart: always
+    read_only: true
+    volumes:
+      - ./data/php_logs/:/var/log/php-fpm
+    tmpfs:
+      - /var/cache/nginx/
+      - /run
+      - /tmp
+    networks: 
+      - web
+    ports:
+      - 80:80
+  myadmin:
+    image: ebspace/armhf-phpmyadmin
+    restart: always
+    volumes:
+      - ./data/pma_apache_logs/:/var/log/apache2
+    tmpfs:
+      - /tmp
+    environment:
+      PMA_HOST: mysql
+    depends_on: 
+     - mysql
+    networks: 
+     - web
+    ports:
+     - 443:443
+
+networks: 
+  web:
+    driver: bridge
