@@ -11,7 +11,8 @@ The credit is added using phpmyadmin (users->credit field). When an unknown RFID
  * For OS I use https://blog.hypriot.com/ since it has docker already installed.
 
 ## Additional packages
-```apt-get install python-rpi.gpio python-mysqldb
+```
+apt-get install python-rpi.gpio python-mysqldb
 pip install mfrc522 gpiozero
 ```
 
