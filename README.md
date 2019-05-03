@@ -40,8 +40,7 @@ docker ps
 docker logs <container>
 ```
 
-
-
-On http port you should see UI with statistics, on https port you should see phpmyadmin.
-PHPMYADMIN - https://<RPI IP>/phpmyadmin
-UI - http://<RPI IP>/
+## Web interfaces
+On http port (TCP 80) you should see UI with statistics, on https(443 HTTPS) port you should see phpmyadmin.
+* PHPMYADMIN - https://<RPI IP>/phpmyadmin
+* UI - http://<RPI IP>/
