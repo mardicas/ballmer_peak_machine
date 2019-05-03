@@ -12,23 +12,28 @@ The credit is added using phpmyadmin (users->credit field). When an unknown RFID
 
 ## Additional packages
 ```apt-get install python-rpi.gpio python-mysqldb
-pip install mfrc522 gpiozero```
+pip install mfrc522 gpiozero
+```
 
 ## To build frontend webpage:
-```docker-compose build```
+```docker-compose build
+```
 
 ## To start phpmyadmin, mysql and frontend
-```docker-compose up -d```
+```docker-compose up -d
+```
 
 ## systemd service
  * The python code (automaat.py) runs as systemd service and it only depends on the mysql server. If you don't want phpmyadmin or frontend you do not need to start them. You can also install or use another mysql server if you wish.
 ```cp automaat.service /etc/systemd/system/automaat.service
 systemctl enable automaat
-systemctl start automaat```
+systemctl start automaat
+```
 ## Debugging
 ```journalctl -u automaat.service
 docker ps
-docker logs <container>```
+docker logs <container>
+```
 
 
 
