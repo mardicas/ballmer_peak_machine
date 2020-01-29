@@ -3,6 +3,7 @@ DIY can(beer!) dispensing fridge with raspberry pi. This is my first RPI project
 
 ## Video
 Short demo https://youtu.be/Kdcffz6T2Zw
+Look on the inside https://www.youtube.com/watch?v=aPZth4esOSE
 
 ## Hardware and OS
  * I am using Raspberry Pi 3 Model B+, but it should work on others too(let me know!)
