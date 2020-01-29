@@ -52,6 +52,23 @@ systemctl start automaat
 * The credit is added using phpmyadmin (users->credit field). 
 * When a new RFID card is scanned, then it gets added to users table, but "name" field has to be filled manually first time and 0 credit is given.
 
+## Operational logic
+The machine has two slots for drinks - Red and Blue. 
+Red Detect detects if there are any drinks in the red slots.
+Blue Detect detects if there are any drinks in the blue slots.
+If there are no drinks in the Red slot then the "Left LED" glows red.
+If there are no drinks in the Blue slot then the "Right LED" glows red.
+If there are no drinks in either, then all LEDs are Red.
+
+The green button is a "feeling lucky" button - a lottery. The "Up" LED will start to blink every 15 minutes and when green button is pressed then you have a 1:100 chance to get a free drink. If you did not win then the LEDs will flash Red, if you won then you can select either Red or Blue drink and the lights will be flashing.
+
+If you scan your RFID card and you have credits, then you can choose weather to take from blue or red slots by pressing the red or blue button(the left and right leds will be blinking green). The credits on your card are taken only after you chose a drink. If you don't choose a drink within a minute then the "order" is cancelled.
+
+If you don't have credit on the RFID card or it is a new card then the lights will flash red and you can not get a drink.
+
+The two sets of servos are needed to make sure only one can is released. The "lock" servo is in front of the first can and the other servo is behind it. The behind servos job is to keep the other cans from dropping down before the lock is closed again. The lock servo is stronger and it can take the imact all the dropping cans cause, the regular servo is only able to keep the cans still.
+
+
 ## Debugging
 ```
 journalctl -u automaat.service
